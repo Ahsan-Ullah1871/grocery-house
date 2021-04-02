@@ -16,7 +16,6 @@ const AddProduct = () => {
 		productData.photo_url = photoUrl;
 		productData.date = new Date();
 
-		console.log(productData);
 		axios({
 			method: "post",
 			url:
@@ -27,7 +26,6 @@ const AddProduct = () => {
 	};
 
 	const handleUploadImage = (event) => {
-		console.log(event.target.files[0]);
 		const ImageData = new FormData();
 		ImageData.set("key", "85dea4d9aec0e6e2a9113a6126e66123");
 		ImageData.append("image", event.target.files[0]);
@@ -35,7 +33,6 @@ const AddProduct = () => {
 		axios.post("https://api.imgbb.com/1/upload", ImageData)
 			.then(function (response) {
 				setPhotoUrl(response.data.data.display_url);
-				console.log(photoUrl);
 			})
 			.catch(function (error) {
 				console.log(error);
