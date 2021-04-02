@@ -32,7 +32,7 @@ const CheckOut = () => {
 	};
 
 	return (
-		<div className="container checkOutPart">
+		<div className="container checkOutPage">
 			<h3 className="text-center mt-5">
 				{orderDetails ? "Place Order" : "Check Out"}
 			</h3>

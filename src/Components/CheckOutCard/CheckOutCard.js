@@ -88,7 +88,7 @@ const CheckOutCard = ({ product, handleCheckOut }) => {
 				</Table>
 			</div>
 
-			<div className="  checkOutPart  w-25 ml-auto ">
+			<div className="  checkOutBox  w-25 ml-auto ">
 				<OrderSummary
 					price={price}
 					quantityValue={quantityValue}
