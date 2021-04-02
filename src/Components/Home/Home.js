@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Row } from "react-bootstrap";
 import Header from "../Header/Header";
 import HomeCard from "../HomeCard/HomeCard";
+import HomeLoading from "../../LoadingGif/homeloading.gif";
 
 const Home = () => {
 	const [products, setProducts] = useState(null);
@@ -19,13 +20,20 @@ const Home = () => {
 		});
 	}, []);
 	return (
-		<div>
-			<Header></Header>
-			<Row className="container d-flex justify-content-center ml-auto mr-auto">
-				{products?.map((product) => (
-					<HomeCard product={product}></HomeCard>
-				))}
-			</Row>
+		<div style={{ marginTop: "120px" }}>
+			{products ? (
+				<Row className="container d-flex justify-content-center ml-auto mr-auto">
+					{products.map((product) => (
+						<HomeCard
+							product={product}
+						></HomeCard>
+					))}
+				</Row>
+			) : (
+				<div className="homeSpinner text-center">
+					<img src={HomeLoading} alt="" />
+				</div>
+			)}
 		</div>
 	);
 };

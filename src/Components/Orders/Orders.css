@@ -1,0 +1,11 @@
+.ordersPage {
+	margin-top: 120px;
+}
+
+.allOrdersNav {
+	height: 500px;
+	overflow: scroll;
+}
+/* .allOrdersNav::-webkit-scrollbar {
+	display: none;
+} */

@@ -3,10 +3,13 @@ import "./AddProduct.css";
 import { useForm } from "react-hook-form";
 import { Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
+import { useHistory } from "react-router";
+import AddProductForm from "../AddProductForm/AddProductForm";
+import AddProductSuccess from "../AddProductSuccess/AddProductSuccess";
 
 const AddProduct = () => {
 	const [photoUrl, setPhotoUrl] = useState(null);
-
+	const [isSubmit, setIsSubmit] = useState(false);
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		const productData = { ...data };
@@ -20,6 +23,7 @@ const AddProduct = () => {
 				"https://intense-spire-37690.herokuapp.com/addNewProduct",
 			data: productData,
 		});
+		setIsSubmit(true);
 	};
 
 	const handleUploadImage = (event) => {
@@ -40,68 +44,14 @@ const AddProduct = () => {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<Form.Row>
-					<Form.Group
-						as={Col}
-						controlId="formGridEmail"
-					>
-						<Form.Label>Product Name</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Product Name"
-							name="productName"
-							ref={register({
-								required: true,
-							})}
-						/>
-					</Form.Group>
-
-					<Form.Group
-						as={Col}
-						controlId="formGridPassword"
-					>
-						<Form.Label>Weight</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Weight"
-							name="weight"
-							ref={register({
-								required: true,
-							})}
-						/>
-					</Form.Group>
-				</Form.Row>
-				<Form.Row>
-					<Form.Group
-						as={Col}
-						controlId="formGridEmail"
-					>
-						<Form.Label>Price</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Price"
-							name="price"
-							ref={register({
-								required: true,
-							})}
-						/>
-					</Form.Group>
-
-					<Form.Group
-						as={Col}
-						controlId="formGridPassword"
-					>
-						<Form.Label>Photo</Form.Label>
-						<Form.Control
-							type="file"
-							onChange={handleUploadImage}
-						/>
-					</Form.Group>
-				</Form.Row>
-
-				<input type="submit" />
-			</form>
+			{isSubmit ? (
+				<AddProductSuccess />
+			) : (
+				<AddProductForm
+					handleUploadImage={handleUploadImage}
+					onSubmit={onSubmit}
+				/>
+			)}
 		</div>
 	);
 };

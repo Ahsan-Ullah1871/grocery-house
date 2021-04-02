@@ -1,0 +1,41 @@
+.adminContainer {
+	margin-top: 100px;
+}
+.adminMenu {
+	margin-top: 20px;
+	background-color: #203d37;
+	min-height: 520px;
+	color: bisque;
+}
+
+.adminMenu li {
+	list-style: none;
+	background-color: crimson;
+	padding: 10px;
+	margin-top: 10px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 50px;
+}
+.adminMenu li:hover {
+	background-color: rgba(220, 20, 60, 0);
+	border: 2px solid crimson;
+}
+
+.adminMenu a {
+	color: blanchedalmond;
+}
+
+.adminMenu a:hover {
+	text-decoration: none;
+	color: bisque;
+}
+
+.adminMainPart {
+	height: 450px;
+	overflow: scroll;
+}
+.adminMainPart::-webkit-scrollbar {
+	display: none;
+}

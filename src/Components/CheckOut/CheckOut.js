@@ -5,10 +5,12 @@ import Header from "../Header/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import CheckOutCard from "../CheckOutCard/CheckOutCard";
+import PlaceOrder from "../PlaceOrder/PlaceOrder";
+import DoubbleBallSpinner from "../../LoadingGif/Double Ring.gif";
 
 const CheckOut = () => {
 	let { name } = useParams();
-
 	const [product, setProduct] = useState(null);
 	useEffect(() => {
 		axios({
@@ -21,65 +23,37 @@ const CheckOut = () => {
 			setProduct(response.data);
 		});
 	}, [name]);
-	console.log(product);
-	// const { productName, weight, price, photo_url } = product;
+
+	const [orderDetails, setOrderDetails] = useState(null);
+
+	const handleCheckOut = (quantity) => {
+		const fullDetails = { ...product, quantity };
+		setOrderDetails(fullDetails);
+	};
 
 	return (
-		<div className="container">
-			<Header />
-
-			<h3 className="text-center mt-5">Check Out</h3>
-			<div className="descriptionPart">
-				<Table striped bordered hover>
-					<thead>
-						<tr>
-							<th>Description</th>
-							<th>Photo</th>
-							<th>Quantity</th>
-							<th>Price</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								{product?.productName}-
-								{product?.weight}
-							</td>
-							<td>{product?.productName}</td>
-							<td>1</td>
-							<td>{product?.price}</td>
-						</tr>
-					</tbody>
-				</Table>
-			</div>
-
-			<div className="  checkOutPart  w-25 ml-auto ">
-				<table class="table">
-					<tr>
-						<th scope="row">Name</th>
-						<td>Mango</td>
-					</tr>
-					<tr>
-						<th scope="row">Price</th>
-						<td>100</td>
-					</tr>
-					<tr>
-						<th scope="row">Shipping Charge</th>
-						<td>10</td>
-					</tr>
-					<tr>
-						<th scope="row">Tax</th>
-						<td>10</td>
-					</tr>
-					<tr>
-						<th scope="row">Total Charge</th>
-						<td>100</td>
-					</tr>
-				</table>
-				<Button className="checkOutButton" variant="info">
-					Check Out
-				</Button>
-			</div>
+		<div className="container checkOutPart">
+			<h3 className="text-center mt-5">
+				{orderDetails ? "Place Order" : "Check Out"}
+			</h3>
+			{product ? (
+				<div>
+					{orderDetails ? (
+						<PlaceOrder
+							orderDetails={orderDetails}
+						/>
+					) : (
+						<CheckOutCard
+							product={product}
+							handleCheckOut={handleCheckOut}
+						/>
+					)}
+				</div>
+			) : (
+				<div className="text-center">
+					<img src={DoubbleBallSpinner} alt="" />
+				</div>
+			)}
 		</div>
 	);
 };

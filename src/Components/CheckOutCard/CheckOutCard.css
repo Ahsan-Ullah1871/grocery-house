@@ -1,0 +1,16 @@
+.checkOutPart {
+	position: relative;
+	background-color: aliceblue;
+	padding: 10px;
+	box-shadow: 10px 10px 20px black;
+}
+.descriptionPart img {
+	width: 100px;
+}
+
+.checkOutButton {
+	margin-left: 30%;
+}
+.takaSymbol {
+	font-size: 20px;
+}

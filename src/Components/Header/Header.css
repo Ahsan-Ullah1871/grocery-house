@@ -1,10 +1,35 @@
+.headerPart {
+	background-color: #f7f8fa;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 110px;
+	padding-top: 10px;
+	z-index: 1;
+}
+.headerPart img {
+	margin-left: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 200px;
+}
 .navPart a {
 	width: 100px;
-	margin: 0 10px;
+	margin: 0 20px;
 	text-align: center;
 	color: black;
-	font-size: 20px;
+	padding: 10px;
 }
 .navPart a:hover {
 	text-decoration: none;
+	border-bottom: 2px solid crimson;
+}
+.profilePart {
+	width: 200px;
+	position: absolute;
+	margin-top: 100px;
+	right: 0;
+	margin-right: 100px;
+	text-align: center;
 }
