@@ -15,7 +15,7 @@ const ManageProduct = () => {
 		});
 	}, []);
 	return (
-		<div>
+		<div className="ml-auto mr-auto">
 			{products?.map((product) => (
 				<ManageProductCard product={product} />
 			))}

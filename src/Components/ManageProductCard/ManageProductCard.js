@@ -15,11 +15,11 @@ const ManageProductCard = ({ product }) => {
 	return (
 		<div>
 			<div className="productBox">
-				<div className="row">
-					<div className="col-8 d-flex   align-items-center">
+				<div className="row ml-auto mr-auto">
+					<div className="col-6 col-md-8 d-flex   align-items-center">
 						<img src={photo_url} alt="" />
 						<p className="ml-3">{productName}</p>
-						<p className="ml-3">
+						<p className="ml-3 weight">
 							<span className="headerHighLight">
 								Weight:
 							</span>{" "}

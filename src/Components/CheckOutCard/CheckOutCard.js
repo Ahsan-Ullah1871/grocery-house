@@ -53,6 +53,7 @@ const CheckOutCard = ({ product, handleCheckOut }) => {
 									}
 								>
 									<FontAwesomeIcon
+										className="DecrementIcon"
 										icon={
 											faMinus
 										}
@@ -72,6 +73,7 @@ const CheckOutCard = ({ product, handleCheckOut }) => {
 									}
 								>
 									<FontAwesomeIcon
+										className="IncrementIcon"
 										icon={
 											faPlus
 										}
@@ -88,7 +90,7 @@ const CheckOutCard = ({ product, handleCheckOut }) => {
 				</Table>
 			</div>
 
-			<div className="  checkOutBox  w-25 ml-auto ">
+			<div className="  checkOutBox    ">
 				<OrderSummary
 					price={price}
 					quantityValue={quantityValue}

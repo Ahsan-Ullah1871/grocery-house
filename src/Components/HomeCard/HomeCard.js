@@ -11,7 +11,7 @@ const HomeCard = ({ product }) => {
 		history.push(`/checkOut/${name}`);
 	};
 	return (
-		<div className="col-md-4 mb-5 homeCard">
+		<div className="col-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center ">
 			<Card style={{ width: "18rem", height: "22rem" }}>
 				<Card.Img variant="top" src={photo_url} />
 				<Card.Body>

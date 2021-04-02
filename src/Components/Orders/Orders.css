@@ -6,6 +6,15 @@
 	height: 500px;
 	overflow: scroll;
 }
-/* .allOrdersNav::-webkit-scrollbar {
+.ordersMobileView {
 	display: none;
-} */
+}
+
+@media only screen and (max-width: 1200px) {
+	.ordersDesktopView {
+		display: none;
+	}
+	.ordersMobileView {
+		display: block;
+	}
+}
