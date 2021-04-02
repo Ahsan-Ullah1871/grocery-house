@@ -24,19 +24,16 @@ const AddProductForm = ({ handleUploadImage, onSubmit }) => {
 							})}
 						/>
 					</Form.Group>
-
 					<Form.Group
 						as={Col}
 						controlId="formGridPassword"
 					>
-						<Form.Label>Weight</Form.Label>
+						<Form.Label>Photo</Form.Label>
 						<Form.Control
-							type="text"
-							placeholder="Weight"
-							name="weight"
-							ref={register({
-								required: true,
-							})}
+							type="file"
+							onChange={(event) =>
+								handleUploadImage(event)
+							}
 						/>
 					</Form.Group>
 				</Form.Row>
@@ -60,12 +57,14 @@ const AddProductForm = ({ handleUploadImage, onSubmit }) => {
 						as={Col}
 						controlId="formGridPassword"
 					>
-						<Form.Label>Photo</Form.Label>
+						<Form.Label>Weight</Form.Label>
 						<Form.Control
-							type="file"
-							onChange={(event) =>
-								handleUploadImage(event)
-							}
+							type="text"
+							placeholder="Weight"
+							name="weight"
+							ref={register({
+								required: true,
+							})}
 						/>
 					</Form.Group>
 				</Form.Row>
