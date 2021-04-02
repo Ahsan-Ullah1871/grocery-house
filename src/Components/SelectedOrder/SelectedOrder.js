@@ -5,19 +5,18 @@ import { useParams } from "react-router";
 import "./SelectedOrder.css";
 
 const SelectedOrder = () => {
-	let { selectedOrder } = useParams();
+	let { singleOrder } = useParams();
+	console.log(singleOrder);
 	const [order, setOrder] = useState(null);
 	useEffect(() => {
 		axios({
 			method: "get",
-			url:
-				"https://intense-spire-37690.herokuapp.com/my-orders/" +
-				selectedOrder,
+			url: `https://intense-spire-37690.herokuapp.com/my-orders/${singleOrder}`,
 			responseType: "stream",
 		}).then(function (response) {
 			setOrder(response.data);
 		});
-	}, [selectedOrder]);
+	}, [singleOrder]);
 	return (
 		<div>
 			<div className="orderInfo d-flex justify-content-between align-items-center">

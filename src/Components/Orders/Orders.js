@@ -47,7 +47,7 @@ const Orders = () => {
 								</h3>
 							</Route>
 							<Route
-								path={`/:selectedOrder`}
+								path={`${path}/:singleOrder`}
 							>
 								<SelectedOrder />
 							</Route>

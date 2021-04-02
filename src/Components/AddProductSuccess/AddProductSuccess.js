@@ -20,15 +20,10 @@ const AddProductSuccess = () => {
 						You have successfully added a product.
 					</Card.Text>
 					<hr />
-					<div className="card-footer d-flex justify-content-between">
+					<div className="card-footer d-flex justify-content-center">
 						<Link to="/home">
 							<Button variant="info">
 								Go to Home
-							</Button>
-						</Link>
-						<Link to="/admin">
-							<Button variant="info">
-								Add More Product
 							</Button>
 						</Link>
 					</div>
