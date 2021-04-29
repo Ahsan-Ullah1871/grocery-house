@@ -23,7 +23,7 @@ const PlaceOrder = ({ orderDetails }) => {
 	};
 	const countPrice = Number(price) * quantity;
 	const shippingCharge = 60;
-	const tax = countPrice * 0.1;
+	const tax = Math.round(countPrice * 0.1);
 	const totalCharge = countPrice + shippingCharge + tax;
 
 	const onSubmit = (data) => {

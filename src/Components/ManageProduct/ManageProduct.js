@@ -13,7 +13,7 @@ const ManageProduct = () => {
 		}).then(function (response) {
 			setProducts(response.data);
 		});
-	}, []);
+	}, [products]);
 	return (
 		<div className="ml-auto mr-auto">
 			{products?.map((product) => (

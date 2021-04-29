@@ -6,11 +6,10 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 const ManageProductCard = ({ product }) => {
 	const { productName, photo_url, price, weight, _id } = product;
-	const deleteProduct = (id, event) => {
+	const deleteProduct = (id) => {
 		axios.delete(
 			`https://intense-spire-37690.herokuapp.com/deleteProduct/${id}`
 		);
-		window.location.reload(false);
 	};
 	return (
 		<div>
@@ -38,10 +37,7 @@ const ManageProductCard = ({ product }) => {
 							variant="danger"
 							className=" deleteButton"
 							onClick={(event) =>
-								deleteProduct(
-									_id,
-									event
-								)
+								deleteProduct(_id)
 							}
 						>
 							<FontAwesomeIcon
