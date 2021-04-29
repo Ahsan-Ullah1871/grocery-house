@@ -16,6 +16,17 @@
 ## Description
 
 You can buy your daily products from my website🥰🥰!!
+
+Packages: <br/>
+1.Used React Framework, JavaScript
+Language, Node.JS for
+Backend, and MongoDB as database. <br/>
+2.Firebase for authentication.
+<br/>
+3.React-bootstrap for style frontend side.
+<br/>
+4.React hook form to get data from the form.
+
 Some features of my project: <br />
 
 1.This site is responsive for mobile and Desktop. <br />
@@ -37,3 +48,7 @@ After download you open the project in your IDE and open your terminal. Then for
 ## Live link:
 
 -live server: - [Grocery-House](https://ah-grocery-house.web.app)
+
+## Server Side repository link:
+
+-Backend side Link: - [Grocery-House Server Side](https://ah-grocery-house.web.app)
