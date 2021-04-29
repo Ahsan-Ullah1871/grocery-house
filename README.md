@@ -1,4 +1,4 @@
-# [Grocery House] (https://ah-grocery-house.web.app)
+# [Grocery House](https://ah-grocery-house.web.app)
 
 ![Project Image](Grocery-House.png)
 
